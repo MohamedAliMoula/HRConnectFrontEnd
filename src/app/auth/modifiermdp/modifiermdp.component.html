@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <div>
+      <div class="card shadow p-3 mb-5 border-0" style="width: 18rem;" *ngIf="tfa.secretImageUri">
+        <img class="card-img-top" [src]="tfa.secretImageUri" alt="QR Code">
+        <div class="card-body">
+          <h1 class="heading"><strong>Enable Two-Factor Authentication for Enhanced Security</strong></h1>
+          <p class="card-text">Scan the QR code below to set up Two-Factor Authentication and add an extra layer of
+            security to your account.</p>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<div class="main-wrapper">
+  <div class="page-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-md-4 theiaStickySidebar">
+          <app-sidebar></app-sidebar>
+
+
+        </div>
+
+        <div class="col-xl-9 col-md-8">
+          <div class="settings-widget profile-details">
+            <div class="settings-menu p-0">
+              <div class="profile-heading">
+                <h3>Account Settings</h3>
+                <p>You have full control to manage your own account settings, including Two-Factor Authentication.</p>
+              </div>
+              <div class="course-group mb-0 ">
+                <p>Manage Two-Factor Authentication settings</p>
+
+                <button (click)="disable2fa()" type="button" class="btn btn-primary">Disable Two-Factor
+                  Authentication</button>
+                <button (click)="enable2fa()" type="button" class="btn btn-primary" style="margin-left: 50px;"
+                  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Enable Two-Factor Authentication
+                </button>
+
+              </div>
+              <div class="checkout-form personal-address add-course-info ">
+                <div class="personal-info-head" *ngIf="user">
+                  <h4>Change Password</h4>
+                  <p>Update your account password for enhanced security.</p>
+                  <div class="profile-content">
+                    <form (ngSubmit)="changePassword()">
+                      <div class="mb-3">
+                        <label for="currentPassword" class="form-label">Current Password</label>
+                        <input type="password" class="form-control" id="currentPassword"
+                          [(ngModel)]="changePasswordRequest.currentPassword" name="currentPassword" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="newPassword" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPassword"
+                          [(ngModel)]="changePasswordRequest.newPassword" name="newPassword" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="confirmationPassword" class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control" id="confirmationPassword"
+                          [(ngModel)]="changePasswordRequest.confirmationPassword" name="confirmationPassword" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

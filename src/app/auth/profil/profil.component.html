@@ -1,0 +1,135 @@
+ <app-navbar></app-navbar> 
+<div class="main-wrapper">
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-4 theiaStickySidebar">
+                    <div class="settings-widget dash-profile mb-3">
+                        <div class="settings-menu p-0">
+                            <div class="profile-bg">
+                                <h5>Beginner</h5>
+
+                                <img src="assets/img/profile-bg.jpg" alt="">
+                                <div class="profile-img">
+                                    <a href="student-profile.html"><img [src]="getAdminPhotoUrl(user)" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="profile-group">
+                                <div class="profile-name text-center">
+                                    <h4><a href="student-profile.html">{{user?.firstname}}</a></h4>
+                                    <p>{{user?.role}}</p>
+                                </div>
+                                <div class="go-dashboard text-center">
+                                    <a href="deposit-student-dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <app-sidebar></app-sidebar>
+                </div>
+             
+                <div class="col-xl-9 col-md-8">
+                    <div class="settings-widget profile-details">
+                        <div class="settings-menu p-0">
+                            <div class="profile-heading">
+                                <h3>Profile Details</h3>
+                                <p>You have full control to manage your own account setting.</p>
+                            </div>
+                            <div class="course-group mb-0 d-flex">
+                                <div class="course-group-img d-flex align-items-center">
+                                    <a href="student-profile.html">
+                                        <img *ngIf="user?.image" [src]="getAdminPhotoUrl(user)" class="i"
+                                            alt="Uploaded Image">
+
+                                        <img src="assets/img/user/user11.jpg" alt="" class="img-fluid"></a>
+                                    <div class="course-name">
+                                        <h4><a href="student-profile.html">Your avatar</a></h4>
+                                        <p>PNG or JPG no bigger than 800px wide and tall.</p>
+                                    </div>
+                                </div>
+                                <div class="profile-share d-flex align-items-center justify-content-center">
+                                    <input class="form-control" type="file" 
+                                        (change)="uploadFile($event)" style="display: none;" #fileInput required>
+
+                                    <a class="btn btn-success" (click)="fileInput.click()">Update</a>
+
+                                    <a  class="btn btn-danger">Delete</a>
+                                </div>
+                            </div>
+                            <div class="checkout-form personal-address add-course-info ">
+                                <div class="personal-info-head" *ngIf="user">
+                                    <h4>Personal Details</h4>
+                                    <p>Edit your personal information.</p>
+                                    <div class="profile-content">
+                                        <div class="profile-image">
+                                        </div>
+                                        <div class="profile-details">
+                                            <div class="form-group">
+                                                <label for="firstname">Prénom</label>
+                                                <input type="text" id="firstname" name="firstname"
+                                                    [(ngModel)]="user.firstname" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lastname">Nom</label>
+                                                <input type="text" id="lastname" name="lastname"
+                                                    [(ngModel)]="user.lastname" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" name="email" [(ngModel)]="user.email"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="birthday">Date de naissance</label>
+                                                <input type="date" id="birthday" name="birthday"
+                                                    [(ngModel)]="user.birthday" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="phoneNumber">Numéro de téléphone</label>
+                                                <input type="text" id="phoneNumber" name="phoneNumber"
+                                                    [(ngModel)]="user.phoneNumber" class="form-control">
+                                            </div>
+                                            <!-- <div class="form-group">
+                                                <label for="registrationNumber">Numéro d'enregistrement</label>
+                                                <input type="text" id="registrationNumber" name="registrationNumber"
+                                                    [(ngModel)]="user.registrationNumber" class="form-control">
+                                            </div> -->
+                                            <div class="form-group">
+                                                <label for="ncin">Numéro de carte d'identité nationale (NCIN)</label>
+                                                <input type="text" id="ncin" name="ncin" [(ngModel)]="user.ncin"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="company">Compagnie</label>
+                                                <input type="text" id="company" name="company"
+                                                    [(ngModel)]="user.company" class="form-control">
+                                            </div>
+
+                                            <div class="form-group" style="    margin-top: 15px;">
+                                                <button type="submit" class="btn btn-primary"
+                                                    (click)="updateUser()">Enregistrer</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ 
+
+</div>
+
+
+
+
+
+  

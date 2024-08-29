@@ -1,0 +1,132 @@
+/* Augmenter la taille du logo */
+.navbar-brand img {
+    width: 150px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Conserve les proportions de l'image */
+  }
+  
+  /* Augmenter la taille du texte de la marque */
+  .navbar-brand {
+    letter-spacing: 2px;
+    font-size: 2rem; /* Augmenter la taille du texte de la marque */
+    font-weight: 500;
+  }
+  
+  /* Augmenter la taille du texte des liens de navigation */
+  .navbar-nav .nav-link {
+    font-size: 1rem; /* Augmenter la taille du texte des liens */
+  }
+  
+  /* Augmenter la taille de l'icône du menu hamburger */
+  .navbar-toggler .fa-bars {
+    font-size: 2rem; /* Augmenter la taille de l'icône du menu */
+  }
+  
+  /* Augmenter la taille des icônes supplémentaires dans la barre de navigation */
+  .navbar-nav .nav-link .fa-language,
+  .navbar-nav .nav-link .fa-right-to-bracket {
+    font-size: 1.6rem; /* Augmenter la taille des icônes supplémentaires */
+  }
+  
+  /* Styles pour les écrans plus petits */
+  @media (max-width: 991px) {
+    .navbar-scroll {
+      background-color: #fff;
+    }
+     
+    .navbar-scroll .navbar-brand,
+    .navbar-scroll .nav-link,
+    .navbar-scroll .fa-bars {
+      color: #4f4f4f !important;
+    }
+  }
+  
+  /* Autres styles pour les états scrolled */
+  .navbar-scroll .navbar-brand,
+  .navbar-scroll .nav-link,
+  .navbar-scroll .fa-bars {
+    color: #000000;
+  }
+  
+  .navbar-scroll {
+    box-shadow: none;
+  }
+  
+  .navbar-scrolled {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar-scrolled .navbar-brand,
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .fa-bars {
+    color: #4f4f4f;
+  }
+  
+  .navbar-scrolled {
+    background-color: #fff;
+  }
+  
+  /* Ajustements pour différentes tailles d'écran */
+  @media (max-width: 450px) {
+    #intro {
+      height: 950px !important;
+    }
+  }
+  
+  @media (min-width: 550px) and (max-width: 750px) {
+    #intro {
+      height: 1100px !important;
+    }
+  }
+  
+  @media (min-width: 800px) and (max-width: 990px) {
+    #intro {
+      height: 600px !important;
+    }
+  }
+  
+  .display-1 {
+    font-weight: 500 !important;
+    letter-spacing: 40px;
+  }
+  
+  @media (min-width: 1600px) {
+    .display-1 {
+      font-size: 10rem;
+    }
+  }
+
+  .full-width-container {
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    overflow: hidden; /* Masque les parties de l'image qui dépassent du conteneur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width-image {
+    width: 230%; /* L'image est 230% plus large que le conteneur */
+    height: auto; /* Ajuste la hauteur automatiquement en fonction de la largeur */
+    display: block;
+    position: relative;
+    left: 50%; /* Déplace l'image vers la droite de 50% */
+    transform: translateX(-50%); /* Recentre l'image en la déplaçant vers la gauche de 50% */
+}
+
+.circle-image {
+    border-radius: 100%; /* Rend l'image circulaire */
+    overflow: hidden; /* Masque les parties de l'image en dehors du cercle */
+}
+
+/* Centre le conteneur horizontalement */
+
+
+.fa-solid{
+  color:#000000
+}
+
+.custom-hover {
+  background-color: transparent; /* Assurez-vous que le bouton n'a pas de couleur de fond par défaut */
+  border: none; /* Supprime la bordure par défaut */
+  color: inherit; /* Maintient la couleur du texte actuelle */
+  transition: color 0.3s ease; /* Ajoute une transition douce lors du survol */
+}

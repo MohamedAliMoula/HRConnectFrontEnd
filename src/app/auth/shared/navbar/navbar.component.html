@@ -1,0 +1,79 @@
+<!-- Navbar Wrapper -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <!-- Profile Section -->
+      <a class="navbar-brand" href="instructor-profile.html">
+        <img [src]="getAdminPhotoUrl(user)" alt="" class="rounded-circle" width="50">
+        <span>{{user?.firstname}}</span>
+      </a>
+  
+      <!-- Navbar Toggler for mobile view -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a routerLink="/adduser" class="nav-link">
+              <i class="feather-user-plus"></i> Add User
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/user-list" class="nav-link">
+              <i class="feather-users"></i> User List
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/payroll" class="nav-link">
+              <i class="feather-user-plus"></i> Payroll
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/addtelework" class="nav-link">
+              <i class="feather-user-plus"></i> Add Telework
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/liste" class="nav-link">
+              <i class="feather-user-plus"></i> List Telework
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/archivedTelework" class="nav-link">
+              <i class="feather-user-plus"></i> Archived Telework
+            </a>
+          </li>
+          <!-- New links for Conge and Admin Conge -->
+          <li class="nav-item">
+            <a routerLink="/conge" class="nav-link">
+              <i class="feather-calendar"></i> Conge
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin-conge" class="nav-link">
+              <i class="feather-settings"></i> Admin Conge
+            </a>
+          </li>
+          <!-- Existing account settings links -->
+          <li class="nav-item">
+            <a routerLink="/profil" class="nav-link">
+              <i class="feather-shopping-bag"></i> Edit Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/modifiermdp" class="nav-link">
+              <i class="feather-heart"></i> Change Password
+            </a>
+          </li>
+          <li class="nav-item">
+            <a (click)="logout()" class="nav-link">
+              <i class="feather-power"></i> Sign Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

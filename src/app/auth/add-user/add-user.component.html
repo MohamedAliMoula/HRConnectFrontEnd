@@ -1,0 +1,121 @@
+<app-navbar></app-navbar>
+<div class="container">
+          
+    <div class="title-sec">
+        <div class="row">
+            <div class="col-sm-6 col-lg-5">
+                <img src="assets/img/login-img.png" class="img-fluid" alt="Logo">
+            </div>	
+            <div class="col-sm-6 col-lg-7">
+                <div class="checkout-form personal-address add-course-info ">
+                   
+                    <div class="container">
+                        <form [formGroup]="userForm" (ngSubmit)="addQuest()">
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">First Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your first Name" formControlName="firstname">
+                                <div *ngIf="userForm.get('firstname').errors?.['required'] && userForm.get('firstname').touched" class="text-danger">
+                                  First Name is required
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your last Name" formControlName="lastname">
+                                <div *ngIf="userForm.get('lastname').errors?.['required'] && userForm.get('lastname').touched" class="text-danger">
+                                  Last Name is required
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">Phone Number</label>
+                                <input type="text" class="form-control" placeholder="Enter your Phone" formControlName="phoneNumber">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">Email</label>
+                                <input type="text" class="form-control" placeholder="Enter your Email" formControlName="email">
+                                <div *ngIf="userForm.get('email').errors?.['required'] && userForm.get('email').touched" class="text-danger">
+                                  Email is required
+                                </div>
+                                <div *ngIf="userForm.get('email').errors?.['email'] && userForm.get('email').touched" class="text-danger">
+                                  Please enter a valid email address
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">Birthday</label>
+                                <input type="date" class="form-control" placeholder="Birth of Date" formControlName="birthday">
+                                <div *ngIf="userForm.get('birthday').errors?.['required'] && userForm.get('birthday').touched" class="text-danger">
+                                  Birthday is required
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">Role</label>
+                                <select class="form-select select country-select" formControlName="role">
+                                  <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+                                </select>
+                                <div *ngIf="userForm.get('role').errors?.['required'] && userForm.get('role').touched" class="text-danger">
+                                  Role is required
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">National Card Identification Number (NCIN)</label>
+                                <input type="text" class="form-control" placeholder="National Card Identification Number" formControlName="ncin">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">Company</label>
+                                <input type="text" class="form-control" placeholder="Enter your Company" formControlName="company">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="input-block">
+                                <label class="form-control-label">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter your password" formControlName="password">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">                            
+                          </div>
+                            <div>
+                            <!-- <input type="file" (change)="uploadFile($event)" required> -->
+                            <div class="form-group">
+                              <!-- <input id="mfaEnabled" formControlName="mfaEnabled" type="checkbox">
+                              <label for="mfaEnabled">Enable 2FA (Two Factors Authentication)</label> -->
+                            </div>
+                          </div>
+                          <div class="update-profile">
+                            <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Confirm</button>
+                          </div>
+                        </form>
+                      </div>
+                </div>
+            </div>	
+        </div>	
+    </div>	
+    
+    <!-- Notifications List -->					
+  
+    <!-- /Notifications List -->	
+    
+</div>

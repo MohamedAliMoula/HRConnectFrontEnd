@@ -1,0 +1,89 @@
+<app-navbar></app-navbar> 
+<div class="main-wrapper">
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-4 theiaStickySidebar">
+                    <div class="settings-widget dash-profile mb-3">
+                        <div class="settings-menu p-0">
+                            <div class="profile-bg">
+                                <h5>Beginner</h5>
+
+                                <img src="assets/img/profile-bg.jpg" alt="">
+                                <div class="profile-img">
+                                    <a href="student-profile.html"><img [src]="getAdminPhotoUrl(user)" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="profile-group">
+                                <div class="profile-name text-center">
+                                    <h4><a href="student-profile.html">{{user?.firstname}}</a></h4>
+                                    <p>{{user?.role}}</p>
+                                </div>
+                                <div class="go-dashboard text-center">
+                                    <a href="deposit-student-dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <app-sidebar></app-sidebar>
+                </div>
+             
+                <div class="col-xl-9 col-md-8">
+                    <div class="settings-widget profile-details">
+                        <div class="settings-menu p-0">
+                            <div class="profile-heading">
+                                <h3>Social Profiles</h3>
+                                <p>Add your social profile links in below social accounts.</p>
+                            </div>
+                            <div class="checkout-form personal-address">
+                                <!--begin::Alert-->
+
+<!--end::Alert-->
+                                <form [formGroup]="profileForm" (ngSubmit)="savesocialprofil()">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                          <div class="input-block">
+                                            <label class="form-control-label">Twitter</label>
+                                            <input formControlName="twitter" type="text" class="form-control" placeholder="Twitter Profile Name">
+                                            <div class="text-danger" *ngIf="profileForm.get('twitter').errors && profileForm.get('twitter').touched">
+                                                <div *ngIf="profileForm.get('twitter').errors['required']">Twitter link is required.</div>
+                                                <div *ngIf="profileForm.get('twitter').errors['pattern']">Invalid Twitter link.</div>
+                                            </div>
+                                            
+                                          </div>
+                                        </div>
+                              
+                                                                           
+                                        <div class="col-lg-12">
+                                            <div class="input-block">
+                                                <label class="form-control-label">LinkedIn Profile URL</label>
+                                                <input  formControlName="linkedin" type="text" class="form-control" placeholder="LinkedIn Profile URL">
+                                                <div class="text-danger" *ngIf="profileForm.get('linkedin').errors && profileForm.get('linkedin').touched">
+                                                    <div *ngIf="profileForm.get('linkedin').errors['required']">LinkedIn link is required.</div>
+                                                    <div *ngIf="profileForm.get('linkedin').errors['pattern']">Invalid LinkedIn link.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="update-profile save-social">
+                                            <button type="submit" [disabled]="!profileForm.valid"   class="btn btn-primary">Save Social Profile</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ 
+
+</div>
+
+
+
+
+
+  

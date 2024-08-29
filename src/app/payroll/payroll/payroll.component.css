@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+  
+  .sidebar {
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .table-section {
+    width: 65%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .section-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .file-import,
+  .archive-search {
+    margin-bottom: 20px;
+  }
+  
+  .file-input,
+  .employee-id-input {
+    margin-right: 10px;
+  }
+  
+  .import-button,
+  .fetch-button,
+  .download-button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .payroll-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .payroll-item {
+    margin-bottom: 10px;
+  }
+  
+  .payroll-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .payroll-table th,
+  .payroll-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .payroll-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  

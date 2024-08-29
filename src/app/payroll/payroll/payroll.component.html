@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="sidebar">
+    <div class="import-section">
+      <h2 class="section-title">Import Payroll</h2>
+      
+      <!-- File input and import button -->
+      <div class="file-import">
+        <input type="file" (change)="onFileSelected($event)" class="file-input">
+        <button (click)="importPayroll()" class="import-button">Import</button>
+      </div>
+    </div>
+
+    <div class="archive-section">
+      <h2 class="section-title">Archived Payrolls</h2>
+      
+      <!-- Employee ID input and fetch button -->
+      <div class="archive-search">
+        <input type="number" [(ngModel)]="employeeId" placeholder="Enter Employee ID" class="employee-id-input">
+        <button (click)="fetchArchivedPayrolls()" class="fetch-button">Fetch Archived Payrolls</button>
+      </div>
+      
+      <!-- List of archived payrolls -->
+      <ul class="payroll-list">
+        <li *ngFor="let payroll of archivedPayrolls" class="payroll-item">
+          Payroll ID: {{ payroll.id }} - 
+          <button (click)="downloadPayroll(payroll.id)" class="download-button">Download</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <h2 class="section-title">Payrolls</h2>
+    
+    <!-- Table to display payrolls -->
+    <table class="payroll-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User ID</th>
+          <th>Pay Date</th>
+          <th>Amount</th>
+          <th>File Path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payroll of payrolls">
+          <td>{{ payroll.id }}</td>
+          <td>{{ payroll.userId }}</td>
+          <td>{{ payroll.payDate }}</td>
+          <td>{{ payroll.amount }}</td>
+          <td>{{ payroll.filePath }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

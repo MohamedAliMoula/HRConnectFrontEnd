@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="card mb-5 mb-xl-8" style="margin-top: 50px; margin-left: 20px; margin-right: 20px">
+    <div class="card-body py-3">
+        <h1 class="mb-4">Archived Telework Requests</h1>
+        <div class="table-responsive">
+            <!--begin::Table-->
+            <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                <!--begin::Table head-->
+                <thead>
+                    <tr class="fw-bolder text-muted">
+                        <th class="min-w-30px">ID</th>
+                        <th class="min-w-120px">User ID</th>
+                        <th class="min-w-120px">Start Date</th>
+                        <th class="min-w-120px">End Date</th>
+                        <th class="min-w-120px">Number of Days</th>
+                        <th class="min-w-120px">Reason</th>
+                        <th class="min-w-120px">Status</th>
+                    </tr>
+                </thead>
+                <!--end::Table head-->
+                <!--begin::Table body-->
+                <tbody>
+                    <tr *ngFor="let request of archivedRequests">
+                        <td class="text-dark fw-bolder text-hover-primary fs-6">{{ request.id }}</td>
+                        <td class="text-dark fw-bolder text-hover-primary fs-6">{{ request.userId }}</td>
+                        <td class="text-dark fw-bolder text-hover-primary fs-6">{{ request.startDate | date:'yyyy-MM-dd' }}</td>
+                        <td class="text-dark fw-bolder text-hover-primary fs-6">{{ request.endDate | date:'yyyy-MM-dd' }}</td>
+                        <td class="text-dark fw-bolder text-hover-primary fs-6">{{ request.numberOfDays }}</td>
+                        <td class="text-dark fw-bolder text-hover-primary fs-6">{{ request.reason }}</td>
+                        <td class="text-dark fw-bolder text-hover-primary fs-6">{{ request.status }}</td>
+                    </tr>
+                </tbody>
+                <!--end::Table body-->
+            </table>
+            <!--end::Table-->
+        </div>
+    </div>
+</div>

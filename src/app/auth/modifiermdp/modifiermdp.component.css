@@ -1,0 +1,26 @@
+
+  
+  .card {
+    position: relative;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    background-color: white;
+    width: 700px;
+    border-radius: 15px;
+  }
+  .card-img-top {
+    border-radius: 15px;
+  }
+  .heading {
+    color: hsl(218, 44%, 22%);
+    font-size: 18px;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .card-text {
+    color: hsl(220, 15%, 55%);
+    text-align: center;
+    font-size: 12px;
+  }

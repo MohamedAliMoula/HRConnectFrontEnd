@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Create Telework Request</h1>
+        </div>
+        <div class="card-body">
+            <!-- User Information Section -->
+            <div class="user-info mb-4">
+                <h3 class="section-title">User Information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Name:</strong> {{ user?.firstname }} {{ user?.lastname }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Email:</strong> {{ user?.email }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Phone Number:</strong> {{ user?.phoneNumber }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Company:</strong> {{ user?.company }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Role:</strong> {{ user?.role }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>NCIN:</strong> {{ user?.ncin }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Telework Request Form -->
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <input type="date" class="form-control" id="startDate" [(ngModel)]="telework.startDate" name="startDate" placeholder="Select Start Date" required>
+                    <div *ngIf="!telework.startDate && formSubmitted" class="text-danger">
+                        Start Date is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate" class="form-label">End Date</label>
+                    <input type="date" class="form-control" id="endDate" [(ngModel)]="telework.endDate" name="endDate" placeholder="Select End Date" required>
+                    <div *ngIf="!telework.endDate && formSubmitted" class="text-danger">
+                        End Date is required
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="numberOfDays" class="form-label">Number of Days</label>
+                  <input type="number" class="form-control" id="numberOfDays" [(ngModel)]="telework.numberOfDays" name="numberOfDays" placeholder="Calculated Automatically" readonly>
+              </div>
+                <div class="form-group">
+                    <label for="reason" class="form-label">Reason</label>
+                    <input type="text" class="form-control" id="reason" [(ngModel)]="telework.reason" name="reason" placeholder="Enter Reason" required>
+                    <div *ngIf="!telework.reason && formSubmitted" class="text-danger">
+                        Reason is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
